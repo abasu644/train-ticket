@@ -1,11 +1,11 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: ts-auth-service
+  name: ts-admin-order-service
   namespace: ml-train
 spec:
   hosts:
-  - ts-auth-service
+  - ts-admin-order-service
   http:
   - fault:
       delay:
@@ -14,7 +14,7 @@ spec:
           value: 100
     route:
     - destination:
-        host: ts-auth-service
+        host: ts-admin-order-service
   - route:
     - destination:
-        host: ts-auth-service
+        host: ts-admin-order-service
